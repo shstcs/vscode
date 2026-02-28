@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 웹 명함</title>
+    <!-- 아이콘 사용을 위한 Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="profile-card">
+        <!-- 상단 배경 -->
+        <div class="card-header">
+            <!-- 다크 모드 전환 버튼 -->
+            <button class="theme-toggle" id="theme-btn" aria-label="다크 모드 전환">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <!-- 프로필 이미지: 실제 이미지 URL로 변경하세요 -->
+            <div class="profile-img-wrapper">
+                <img src="./image1.png" alt="프로필 사진" class="profile-img">
+            </div>
+        </div>
+
+        <div class="card-body">
+            <!-- 이름 및 직함 -->
+            <h1 class="name">성연호</h1>
+            <p class="job-title">사회복지사</p>
+
+            <!-- 간단한 자기소개 -->
+            <p class="bio">
+                안녕하세요! 사람들의 삶에 긍정적인 변화를 만드는 사회복지사 성연호입니다.<br>
+                따뜻한 소통과 공감을 통해 더 나은 지역사회를 만들어갑니다.
+            </p>
+
+            <!-- 주요 행동 버튼 (이메일, 포트폴리오 등) -->
+            <div class="contact-info">
+                <a href="mailto:shstcs@gmail.com" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i> 이메일 보내기
+                </a>
+                <a href="https://my-portfolio.com" target="_blank" class="btn btn-outline">
+                    <i class="fa-solid fa-globe"></i> 포트폴리오 방문
+                </a>
+            </div>
+
+            <!-- 소셜 미디어 아이콘 -->
+            <div class="social-links">
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            &copy; 2024 Hong Gil Dong. All rights reserved.
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

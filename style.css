@@ -1,0 +1,192 @@
+/* --- f:\source\vibecording\vscode\style.css --- */
+/* --- 기본 스타일 설정 --- */
+:root {
+    --primary-color: #4a90e2; /* 주요 색상 (파란색 계열) */
+    --bg-color: #f0f2f5;      /* 전체 배경색 */
+    --card-bg: #ffffff;       /* 명함 배경색 */
+    --text-main: #333333;     /* 주요 텍스트 색상 */
+    --text-sub: #666666;      /* 보조 텍스트 색상 */
+    --btn-hover-bg: #f8f9fa;  /* 버튼 호버 배경색 */
+}
+
+/* 다크 모드 변수 재정의 */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-sub: #a0a0a0;
+    --btn-hover-bg: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-main);
+    perspective: 1000px; /* 3D 효과를 위한 원근감 설정 */
+}
+
+/* --- 명함 컨테이너 --- */
+.profile-card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.1s; /* 마우스 움직임에 부드럽게 반응하도록 시간 단축 */
+}
+
+/* --- 상단 배경 및 프로필 이미지 --- */
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 120px;
+    position: relative;
+    transition: background 0.5s ease-in-out;
+}
+
+.profile-img-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg);
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ddd; /* 이미지가 없을 때 회색 배경 */
+    overflow: hidden; /* 이미지가 둥근 테두리를 벗어나지 않도록 자름 */
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out; /* 페이드 효과를 위한 트랜지션 */
+}
+
+/* --- 다크 모드 토글 버튼 --- */
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* --- 본문 내용 --- */
+.card-body {
+    padding: 70px 30px 40px; /* 상단 패딩은 이미지 공간 확보용 */
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.job-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.bio {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- 연락처 및 링크 버튼 --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+}
+
+.btn-outline {
+    border: 2px solid #e1e4e8;
+    color: var(--text-main);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--text-main);
+    background-color: var(--btn-hover-bg);
+}
+
+/* --- 소셜 아이콘 --- */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: var(--text-sub);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+}
+
+/* --- 푸터 --- */
+.card-footer {
+    border-top: 1px solid #eee;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #999;
+}
